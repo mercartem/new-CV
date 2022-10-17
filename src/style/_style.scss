@@ -1,0 +1,370 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1024px;
+    min-width: 600px;
+    margin: 0 auto;
+    font-family: $font-stack;
+    padding: 2rem;
+    background-color: #e6e2d4;
+    color: white;
+}
+
+.wrapper {
+    padding: 5%;
+}
+
+ul, li, a {
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+    padding: 0;
+}
+
+main {
+    max-width: 1024px;
+    margin: auto;
+    box-shadow: 1px 81px 100px 5px rgb(0 0 0 / 49%);
+    display: grid;
+    grid-template-areas: 
+    "ava  info"
+    "about info";
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 3fr;
+}
+
+.avatar { 
+    grid-area: ava;
+    background-color: $color-stack;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+
+    .avatar__img {
+        background-image: url('./img/ava.jpg');
+        background-size: cover;
+        width: 80%;
+        height: 80%;
+        border-radius: 50%;
+        margin: 10% 0;
+    }
+}
+
+.info { 
+    grid-area: info;
+    background-color: white;
+    color: #404042;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+}
+
+.info__name {
+
+    h1 {
+        font-weight: 800;
+        font-size: 80px;
+        width: 80%;
+        text-transform: uppercase;
+        margin: 20px 0;
+
+        span {
+            font-weight: 500;
+            font-size: 70px;
+        }
+    }
+
+    h2 {
+        color: $color-stack;
+        font-weight: 500;
+        font-size: 35px;
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+}
+
+.info__expirience, .info__educations {
+    ul {
+        .info__job, .info__courses {
+            color: #404042;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+
+            span {
+                display: block;
+                margin-left: 20px;
+                color: $color-stack;
+                text-transform: none;
+            }
+
+            p {
+                display: block;
+                color: #404042;
+                margin: 10px 0;
+                margin-left: 20px;
+                text-transform: none;
+            }
+        }
+        .info__job::before, .info__courses::before {
+            display: inline-block;
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: $color-stack;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    }
+}
+    
+.about { 
+    grid-area: about;
+    background-color: #404042;
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+}
+
+.about__contacts {
+    ul {
+        li {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        li::before {
+            display: inline-block;
+            content: '';
+            background-size: 20px 20px;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.about__interests {
+    position: relative;
+
+    .arrow-left {
+        z-index: 1;
+        cursor: pointer;
+        position: absolute;
+        top: 65%;
+        left: 0;
+        background-image: url(./img/arrow-left.png);
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        width: 20px;
+        height: 20px;
+    }
+    .arrow-right {
+        z-index: 1;
+        cursor: pointer;
+        position: absolute;
+        top: 65%;
+        right: 0;
+        background-image: url(./img/arrow-right.png);
+        background-size: 20px 20px;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.location::before { background-image: url(./img/location.svg) }
+.mail::before { background-image: url(./img/mail.png) }
+.telegram::before { background-image: url(./img/telegram.svg) }
+.discord::before { background-image: url(./img/discord.svg) }
+.github::before { background-image: url(./img/github.svg) }
+
+a:hover {
+    transform: scale(1.08);
+    color: $color-stack;
+}
+
+.interests {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    overflow: hidden;
+    height: 96px;
+    max-width: 240px;
+    margin: 0 auto;
+}
+
+.interests__table {
+    position: absolute;
+    display: flex;
+    transition: 500ms;
+}
+
+.interests__hobby {
+    background-size: 64px 64px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 80px;
+    height: 64px;
+}
+
+.football { background-image: url(./img/футбол.png) }
+.game { background-image: url(./img/контроллер.png) }
+.books { background-image: url(./img/чтение.png) }
+.camping { background-image: url(./img/палатка.png) }
+.relax { background-image: url(./img/пляж.png) }
+.ski { background-image: url(./img/горнолыжка.png) }
+.gym { background-image: url(./img/спортзал.png) }
+.movies { background-image: url(./img/нетфликс.png) }
+.invest { background-image: url(./img/инвестиции.png) }
+
+.skills-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills {
+    margin: 0;
+}
+
+.skill {
+    margin-bottom: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 5.5%;
+
+    input {
+        cursor: pointer;
+    }
+}
+
+.title {
+    color: $color-stack;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5%;
+}
+
+.projects__items {
+    transition: 500ms;
+}
+
+.projects__img {
+    box-shadow: 0 0 0 4px rgb(0 0 0 / 10%);
+    transition: 500ms;
+}
+
+.projects__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    padding: 0 10px;
+    font-weight: 400;
+    color: #404042;
+}
+
+.projects__title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    height: 2px;
+    background-color: $color-stack;
+    transition: 500ms;
+}
+
+.projects__item:hover .projects__img {
+    box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.3);
+    transition: 500ms;
+}
+
+.projects__item:hover .projects__title {
+    text-shadow: 0px 3px 3px rgba(150, 150, 150, 1);
+}
+
+.projects__item:hover .projects__title::after {
+    width: 100%;
+    transition: 500ms;
+}
+
+// Адаптив
+
+@media (max-width: 1000px) {
+
+    .projects {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .projects__item {
+        margin-bottom: 20px;
+    }
+
+    main {
+        grid-template-rows: 1fr 4fr;
+    }
+
+    .skill {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    .form {
+        gap: 0;
+        width: 45%;
+    }
+
+    .interests__table {
+        flex-direction: column;
+    }
+
+    .interests {
+        height: 250px;
+        width: 80px;
+        align-items: center;
+    }
+
+    .info__name {
+
+        h1 {
+            font-weight: 800;
+            font-size: 60px;
+            width: 80%;
+            text-transform: uppercase;
+            margin: 20px 0;
+    
+            span {
+                font-weight: 500;
+                font-size: 50px;
+            }
+        }
+    
+        h2 {
+            color: $color-stack;
+            font-weight: 500;
+            font-size: 25px;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    main {
+        grid-template-rows: 1fr 6fr;
+    }
+}
+
