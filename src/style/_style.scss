@@ -250,9 +250,10 @@ a:hover {
 
 .projects {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 5%;
+    column-gap: 4%;
+    row-gap: 10%;
 }
 
 .projects__items {
@@ -265,13 +266,14 @@ a:hover {
 }
 
 .projects__title {
+    width: 180px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     margin: 0;
-    padding: 0 10px;
     font-weight: 400;
+    font-size: 0.9em;
     color: #404042;
 }
 
@@ -279,7 +281,7 @@ a:hover {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -5px;
     width: 50%;
     height: 2px;
     background-color: $color-stack;
